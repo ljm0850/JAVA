@@ -1,2 +1,2 @@
 # JAVA
-about JAVA
+- JAVA를 배우면서 배운것을 기록한 곳입니다
