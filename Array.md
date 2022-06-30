@@ -1,4 +1,4 @@
-# container
+# Array
 
 ## 배열
 
@@ -115,5 +115,38 @@ for (int i=0; i<destArr.length; i++)
 for (int i=0; i<arr1.length; i++)
     System.out.println(arr1[i]);
 System.out.println(Arrays.toString(arr1))
+```
+
+
+
+### for-each
+
+- 가독성이 개선된 반복문
+- 배열 및 Collections에서 사용
+- index 대신 elements에 접근하는 변수 제공
+
+```java
+//for-each
+int intArray [] = {1,3,5,7,9}
+for (int x : intArray) {
+    System.out.println(x);
+}
+// 기존 반복문
+for (int i=0; i<intArray.length; i++){
+    int x = intArray[i];
+    System.out.println(x);
+}
+```
+
+```java
+int[] intArray = {0,8,5,10,15,11,25}
+int min = Integer.MAX_VALUE;
+int max = Integer.MIN_VALUE;
+
+for (int num: intArray){
+    min = Math.min(min,num);
+    max = Math.max(max,num);
+}
+System.out.printf("min: %d, max: %d%n",min,max);
 ```
 
