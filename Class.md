@@ -470,4 +470,116 @@ Friend f = new Person("ljm",27); // 불가
       }
       ```
 
-    - 
+## 추상클래스(abstract class)
+
+- K_Chef & J_Chef
+
+```java
+public class K_Chef {
+// public abstract class Chef {
+    Sting name;
+    int age;
+    String speciality;
+    public void eat() {
+        System.out.println("음식을 먹는다")
+    }
+    public void cook() {
+        System.out.println("한식");
+    }
+}
+
+public class J_chef {
+    ... K_Chef와 동일;
+    public void cook() {
+        System.out.println("일식")
+    }
+}
+```
+
+- 공통된 부분을 묶은 Chef class
+
+```java
+public class Chef {
+    String name;
+    int age;
+    String speciality;
+    
+    public void eat() {
+        System.out.println("음식을 먹는다");
+    }
+    public void cook() {		// 결국 Chef에선 쓸 일이 없으므로 내용을 지워버림
+        System.out.println("음식"); 
+    }
+    // public abstract void cook();
+}
+
+public class K_Chef extends Chef{
+    @Override
+    public void cook() {
+        System.out.println("한식");
+    }
+}
+----
+public class ChefTest {
+    public static void main(String[] args){
+        Chef[] chefs = new Chef[2];
+        
+        chefs[0] = new K_Chef();
+        chefs[1] = new J_Chef();
+        for (Chef chef : chefs) {
+            chef.eat();
+            chef.cook();
+        }
+    }
+}
+// 음식을 먹는다
+// 한식
+// 음식을 먹는다
+// 일식
+```
+
+- 구현이 무의미 한 경우(Chef의 `cook()`) 선언부만 남기고 구현부를 제거
+- 구현부가 없으므로 abstract 키워드를 메서드 선언부에 추가
+  - 객체를 생성할 수 없는 클래스이므로 클래스 선언시에도 abstract 추가
+
+
+
+### 특징
+
+- 상속 전용 클래스
+- 객체 생성 불가
+
+
+
+## 인터페이스
+
+- 완벽히 추상화된 객체 : 모든 메서드가 abstract 형태
+
+```java
+public interface InterfaceTest {
+    public static final int MEMBER1 = 10;
+    inf MEMBER2 = 10;
+    
+    public abstrat void method1(int params);
+    void method2(int param);
+}
+```
+
+- interface 키워드를 이용하여 선언
+- 선언되는 변수는 모두 상수로 적용
+- 선언되는 메소드는 모두 추상 메소드로 적용
+
+- 객체 생성이 불가능
+- 클래스가 인터페이스 상속시 `extends`가 아닌 `implements` 이용
+  - `class Circle implements Shape {}`
+- 인터페이스를 상속받는 하위클래스는 추상 메소드를 반드시 오버라이딩 해야함
+  - 구현하지 않을 경우 abstract 클래스로 표기
+
+
+
+### 필요성
+
+- 표준화 처리
+- 쉬운 모듈 교체
+- 상속 관계가 없는 클래스들에게 인터페이스를 통한 관계 부여로 다형성 확장
+- 모듈 간 독립적 프로그래밍 가능
