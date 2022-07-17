@@ -8,7 +8,7 @@
 
   - ```java
     int prime [][]
-    int [][] prime1
+    int [][] prime1   //권장
     ```
 
 - 같은 종류의 데이터를 저장하기 위한 자료구조
@@ -34,11 +34,23 @@
 
 ### 배열의 생성
 
+```java
+  public static void main(String[] args) {
+    int[] point = new int[50];
+    point[0] = 100;
+    pont[1] = 1111;
+  }
+```
+
+- `new`
+  - 길이(크기)가 얼마인지 알 수 없는 데이터를 만들 때 사용하는 키워드
+
+
 - 1차원
 
   - ```java
     배열 이름 = new 배열유형 [배열크기];
-    prime = new int [10]
+    prime = new int [10];
     ```
 
 - 2차원
