@@ -2,15 +2,31 @@
 
 ## 클래스와 객체
 
+```java
+public class FunctionTest {
+    public static void main(String[] args) {
+        System.out.println("테스트 시작");
+        Test("클래스");
+        System.out.println("테스트 끝");
+    }
+    
+    static void Test(String name) { 
+        System.out.println(name+"을 테스트중입니다");
+        return 1;
+    }
+}
+```
+
 - 클래스
-  - 관련잇는 변수와 함수를 묶어서 만든 사용자정의(자료형)
+  - 변수와 함수를 묶어서 만든 사용자 정의 자료형
   - 객체를 생성하는 틀
+  - 다른 타입의 데이터들을 모으는 기능으로도 사용 가능
 
 - 객체
   - 하나의 역할을 수행하는 메소드와 변수의 묶음
 
 - 객체지향 프로그래밍
-  - 프로그램을 수많은 객체라는 기본 단위로 나누고 상호작용 하는 방식으로 서술하는것
+  - 프로그램을 수많은 객체라는 기본 단위로 나누고 상호작용 하는 방식으로 서술 하는 것
 
 
 
@@ -100,6 +116,7 @@ Test.call();
 
 ## 생성자
 
+- 객체가 생성될때 최초 한번 수행되는 함수.
 - 클래스 명과 이름이 동일
 - 반환 타입이 없음
 
@@ -122,6 +139,7 @@ public class Dog {
 
 ```java
 class Dog{
+    // 생성자도 함수니까 오버로딩이 가능
     Dog(){}
     Dog(String name){}
     Dog(int age){}
@@ -129,7 +147,7 @@ class Dog{
 }
 ```
 
-- 클래스 내에 메소드 이름이 같고 매개변수의 타입 또는 개수가 다른것
+- 클래스 내에 메소드 이름이 같고 매개변수의 타입 또는 개수가 다른 것
 
 ### this
 
