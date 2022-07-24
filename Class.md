@@ -1,5 +1,11 @@
 # Class
 
+### void
+
+- 반환 값이 없는 타입 의미(return이 없다)
+
+
+
 ## 클래스와 객체
 
 ```java
@@ -157,13 +163,19 @@ class Dog{
 
 ```java
 // this.멤버 변수
-class Dog{
+public class Dog{
     String name;
     int age;
     void info(){
         System.out.print(this.name);
         System.out.println(this.age);
     }
+    
+    Dog(String name, int age){
+        this.name = name;	//this.name은 public class Dog 바로 밑의 name을 의미
+        this.age = age;
+    }
+    
 }
 ```
 
@@ -173,20 +185,42 @@ class Dog{
     String name;
     int age;
     Dog(){
-        this("멍멍이")
+        this("멍멍이",3)		// Dog(String name, int age)호출, 인자는 멍멍이,3
     }
-    Dog (String name){
+    Dog (String name, int age){
     }
 }
 ```
 
 
 
-### static ?
+### static
+
+```java
+public class StaticTest {
+    static int val = 50;
+	}
+	public static void main(String[] args) {
+        StaticTest st = new StaticTest();
+        System.out.println(val)
+    }
+
+public class StaticTEst1 {
+    int val = 50;
+	}
+	public static void main(String[] args) {
+        StaticTest st = new StaticTEst();
+        System.out.println(st.val)
+    }
+```
+
+
 
 #### 로딩시점
 
 - static: 클래스 로딩 시
+  - 객체를 생성하지 않아도 호출 가능
+
 - non-static: 객체 생성시
 
 #### 메모리
@@ -413,6 +447,17 @@ public boolean equals(Object obj) {
     return (this == obj);
 }
 ```
+
+- String 비교시에 사용
+
+  ```java
+  String a = 'ljm';
+  String b = 'ljm';
+  a == b; false
+  a.equals(b) //true
+  ```
+  
+  
 
 #### hashCode
 
