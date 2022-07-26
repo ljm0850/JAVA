@@ -243,7 +243,9 @@ class Main {
     public static void main(String [] a) {
        Test account = new Test();
        account.name = "ljm";
+       account.cnt ++;	//객체에서도 접근 가능
        Test.cnt ++;
+       
     }
 }
 ```
@@ -289,7 +291,10 @@ class Main {
 - 다른 패키지에 있는 클래스를 사용하기 위한 과정
 
 ```java
+//packge_name 패키지안의 class_name이 import
 import package_name.class_name;
+
+// package_name의 모든 class가 import, package_name 바로 밑의 class만 import 됨
 import package_name.*;
 ```
 
@@ -312,6 +317,33 @@ public class TestService {		// TestService는 package에 들어있는 클래스
 ### 접근 제한자
 
 - 클래스, 멤버 변수, 멤버 메서드 등 선언부에서 접근 허용 범위를 지정하는 역할
+
+```java
+class Race{
+    // int speed;
+    private int speed
+    public void speedUp(){
+        if (speed < 200)
+            speed +=10;
+    }
+    public int getSpeed(){
+        return speed;
+    }
+    
+    public void setSpeed(int speed){
+        if (speed >=0 && speed < 200)
+            this.speed = speed;
+    }
+}
+public class CarTest {
+    public static void main(String[] args) {
+        Race r = new Race();
+        r.speedUp();
+        // r.speed = 500; private라 접근 불가
+        r.setSpeed(150);
+    }
+}
+```
 
 #### public
 
