@@ -410,7 +410,7 @@ public class Friend extends Person {
     String nickname;
     
     public Friend(String name, int age, String nickname) {
-        super(name,age)
+        super(name,age) //부모클래스의 기본 생성자가 없어서 자식생성자에서 호출을 해줘야함
         this.nickname = nickname
     }
 }
@@ -511,7 +511,7 @@ public boolean equals(Object obj) {
 
 ## 다형성(Polymorphism)
 
-- 상속관계에 있을 때 조상 클래스의 타입으로 자식 클래스 객체 참조
+- 상속관계에 있을 때 **조상(부모)** 클래스의 타입으로 **자식 클래스 객체 참조**
 
 ```java
 Person p = new Friend("ljm",27,"맛대");
@@ -564,6 +564,21 @@ Friend f = new Person("ljm",27); // 불가
           friend.eat();
       }
       ```
+
+#### 동적 바인딩
+
+- 부모 class에 `int data = 20;` 자식 클래스에 `int data = 30'`
+- `Parent test = new Child();`
+  - `test.data = 20` 
+
+- 부모 class에 `public void print(){System.out.println("부모")}`
+- 자식 class에 `public void print(){System.out.println("자식")}`
+
+- `Parent test = new Child();`
+  - `test.print()` => `자식 ` 출력
+
+- 일반적으론 해당 객체에서 찾음 (test가 Parent 객체이므로 Parent에서 찾음)
+- **함수**의 경우는 오버라이딩 한 자식을 호출
 
 ## 추상클래스(abstract class)
 
