@@ -500,6 +500,7 @@ public boolean equals(Object obj) {
 #### final
 
 - 접근제한자의 final
+- 한번 할당되고 나면 변경이 불가
 - 변수를 상수로 사용할 때 사용
 - 메소드 override 금지할 때 사용
 - 클래스 상속을 막을 때 사용
