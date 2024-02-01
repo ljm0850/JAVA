@@ -50,6 +50,10 @@ public abstract class print_test {
 
   - %d : 정수
 
+    - `System.out.printf("5 * 2 = %d", 5*2).println()`
+
+    - `System.out.printf("%d * %d = %d", 5, 7, 5 * 7).println()`
+
   - %f : 실수
 
   - %c : 문자
@@ -58,8 +62,8 @@ public abstract class print_test {
 
   - ```java
     System.out.printf("%d \n",10); //정수 (10진수)
-    System.out.printf("%o \n",10); //정수 (8진수)
-    System.out.printf("%x \n",16); //정수 (16진수)
+    System.out.printf("%o \n",10); //정수 (8진수), 결과값 12
+    System.out.printf("%x \n",16); //정수 (16진수), 결과값 10
     
     System.out.printf("%4d \n",10); // 4칸 확보 후 오른쪽부터 차지
     System.out.printf("%-4d \n",10); // 4칸 확보 후 왼쪽부터 차지
