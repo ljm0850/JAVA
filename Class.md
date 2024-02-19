@@ -12,13 +12,12 @@
 public class FunctionTest {
     public static void main(String[] args) {
         System.out.println("테스트 시작");
-        Test("클래스");
+        test("클래스");
         System.out.println("테스트 끝");
     }
     
-    static void Test(String name) { 
-        System.out.println(name+"을 테스트중입니다");
-        return 1;
+    static void test(String name) { 
+        System.out.println(name + "을 테스트 중입니다");
     }
 }
 ```
