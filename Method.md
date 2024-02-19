@@ -40,11 +40,15 @@ void sayHelloWorld(int numOfTimes){
     System.out.println("Hello World");
   }
 }
+
+void sayHelloWorld(String str){
+  System.out.printf("Hello World %s",str).println();
+}
 ```
 
 - 같은 변수명이지만, parameter에 따라 다른 메서드를 호출
 
-### 가변인자
+#### 가변인자
 
 ```java
 public static int calculateSum(int... numbers) {
