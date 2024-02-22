@@ -334,6 +334,10 @@ public class MotorBike{
   void setSpeed(int speed){
     this.speed = speed;
   }
+  int getSpeed(){
+    return this.speed
+  }
+  
 }
 
 public class MoterBikeRunner {
