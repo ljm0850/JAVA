@@ -311,6 +311,42 @@ public class TestService {		// TestService는 package에 들어있는 클래스
 - 객체의 속성(data fields) & 행위(methods)를 하나로 묶음
 - 실제 구현 내용 일부를 은닉 가능
 
+```java
+
+public class MotorBike{
+  int speed;
+  
+}
+
+public class MoterBikeRunner {
+	public static void main(String[] args) {
+		MoterBike hyundai = new MoterBike();
+		MoterBike honda = new MoterBike();
+		hyundai.speed = 100;  // 메서드를 거치지 않고 데이터를 외부에서 제어 => 캡슐화에 위배
+		honda.speed = 80;
+	}
+}
+
+// 개선
+public class MotorBike{
+	private int speed;
+  
+  void setSpeed(int speed){
+    this.speed = speed;
+  }
+}
+
+public class MoterBikeRunner {
+	public static void main(String[] args) {
+		MoterBike hyundai = new MoterBike();
+		MoterBike honda = new MoterBike();
+    hyundai.setSpeed(100);
+    honda.setSpeed(80);
+  }
+}
+
+```
+
 
 
 ### 접근 제한자
