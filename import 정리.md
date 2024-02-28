@@ -16,6 +16,19 @@
   - `in.next()` : String 형 입력 및 리턴(공백 기준)
   - `in.nextLine()` : String 형 입력 및 리턴 (개행 기준)
 
+```java
+import java.util.Scanner;
+
+public class ScanTest {
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("숫자를 입력해 주세요 : ");
+		int number1 = scanner.nextInt();
+		System.out.println("입력된 숫자는 " + number1);
+	}
+}
+```
+
 
 
 ### `java.util.StringTokenizer`
